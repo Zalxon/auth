@@ -1,0 +1,51 @@
+{
+  "name": "@zalxon/auth",
+  "version": "1.0.0",
+  "description": "library for adding simple authentication to sites",
+  "type": "module",
+  "main": "dst/index.cjs",
+  "module": "dst/index.module.js",
+  "source": "src/index.js",
+  "scripts": {
+    "build": "rimraf dst && microbundle build --jsx React.createElement --jsxFragment React.Fragment -f modern,es,cjs",
+    "watch": "rimraf dst && microbundle watch --jsx React.createElement --jsxFragment React.Fragment -f modern,es,cjs"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/zalxon/auth.git"
+  },
+  "author": "",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/zalxon/auth/issues"
+  },
+  "homepage": "https://github.com/zalxon/auth#readme",
+  "exports": {
+    ".": {
+      "require": "./dst/index.cjs",
+      "default": "./dst/index.modern.js"
+    }
+  },
+  "files": [
+    "dst"
+  ],
+  "prettier": "@zalxon/prettier",
+  "peerDependencies": {
+    "@zalxon/components": "^1.0.1",
+    "next": ">=12",
+    "react": ">=18",
+    "react-dom": ">=18",
+    "theme-ui": ">=0.15.0"
+  },
+  "devDependencies": {
+    "@zalxon/prettier": "^1.0.1",
+    "microbundle": "^0.14.0",
+    "prettier": "2.5.0",
+    "rimraf": "2.6.3"
+  },
+  "dependencies": {
+    "jsonwebtoken": "^8.5.1",
+    "safe-compare": "^1.1.4",
+    "swr": "^1.3.0"
+  }
+}
